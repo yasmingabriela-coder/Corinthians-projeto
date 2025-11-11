@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="História completa do Sport Club Corinthians Paulista - Títulos, conquistas, ídolos e momentos históricos">
+    <meta name="keywords" content="Corinthians, história, títulos, futebol, brasileiro, libertadores, mundial">
+    <title>Corinthiansdex - História do Timão</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/escudo-corinthians.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="images/escudo-corinthians.jpg" alt="Escudo Corinthians" class="logo">
+                    <h1 class="site-title">Corinthiansdex</h1>
+                </div>
+                
+                <nav class="main-nav">
+                    <a href="#historia" class="nav-link">História</a>
+                    <a href="#titulos" class="nav-link">Títulos</a>
+                    <a href="#idolos" class="nav-link">Ídolos</a>
+                    <a href="#estadio" class="nav-link">Estádio</a>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Pesquisar..." class="search-input">
+                    <button class="search-btn" onclick="searchTitles()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">História do Corinthians</h2>
+                <p class="hero-subtitle">Fundado em 1º de setembro de 1910</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">114</span>
+                        <span class="stat-label">Anos de História</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Títulos Oficiais</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Mundiais</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Brasileiros</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fundação Section -->
+    <section id="historia" class="section fundacao-section">
+        <div class="container">
+            <h2 class="section-title">A Fundação</h2>
+            <div class="fundacao-content">
+                <div class="fundacao-text">
+                    <h3>1º de Setembro de 1910</h3>
+                    <p>Às 20h30 do dia 1º de setembro de 1910, à luz de um lampião, na esquina das ruas José Paulino e Cônego Martins, no bairro do Bom Retiro, cinco trabalhadores fundaram o <strong>Sport Club Corinthians Paulista</strong>.</p>
+                    <p>O nome foi inspirado pela turnê do <strong>Corinthian Football Club</strong>, time inglês que impressionou o Brasil com seu futebol vistoso e fair play.</p>
+                    <div class="fundadores">
+                        <h4>Fundadores:</h4>
+                        <ul>
+                            <li>Anselmo Corrêa</li>
+                            <li>Antônio Pereira</li>
+                            <li>Carlos Silva</li>
+                            <li>Joaquim Ambrose</li>
+                            <li>Rafael Perrone</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fundacao-image">
+                    <img src="images/escudo-corinthians.jpg" alt="Escudo do Corinthians">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <h2 class="section-title">Conquistas e Títulos</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todos" onclick="filterTitles('todos')">
+                    Ver Todos
+                </button>
+                <button class="filter-btn internacional" data-filter="internacional" onclick="filterTitles('internacional')">
+                    Internacional
+                </button>
+                <button class="filter-btn nacional" data-filter="nacional" onclick="filterTitles('nacional')">
+                    Nacional
+                </button>
+                <button class="filter-btn estadual" data-filter="estadual" onclick="filterTitles('estadual')">
+                    Estadual
+                </button>
+                <button class="filter-btn idolos" data-filter="idolos" onclick="showIdolos()">
+                    Ídolos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Títulos Grid -->
+    <section id="titulos" class="section titulos-section">
+        <div class="container">
+            <div id="titulosGrid" class="titulos-grid">
+                <!-- Os cards serão inseridos dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ídolos Section -->
+    <section id="idolos" class="section idolos-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Ídolos Eternos</h2>
+            <div id="idolosGrid" class="idolos-grid">
+                <!-- Os cards de ídolos serão inseridos dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Resumo de Títulos -->
+    <section class="resumo-section">
+        <div class="container">
+            <h2 class="section-title">Resumo de Conquistas</h2>
+            <div class="resumo-grid">
+                <div class="resumo-card internacional">
+                    <h3>Internacionais</h3>
+                    <div class="resumo-items">
+                        <div class="resumo-item">
+                            <span class="resumo-number">2</span>
+                            <span class="resumo-label">Mundial de Clubes</span>
+                        </div>
+                        <div class="resumo-item">
+                            <span class="resumo-number">1</span>
+                            <span class="resumo-label">Libertadores</span>
+                        </div>
+                        <div class="resumo-item">
+                            <span class="resumo-number">1</span>
+                            <span class="resumo-label">Recopa Sul-Americana</span>
+                        </div>
+                    </div>
+                    <div class="resumo-total">Total: 4 títulos</div>
+                </div>
+                
+                <div class="resumo-card nacional">
+                    <h3>Nacionais</h3>
+                    <div class="resumo-items">
+                        <div class="resumo-item">
+                            <span class="resumo-number">7</span>
+                            <span class="resumo-label">Campeonato Brasileiro</span>
+                        </div>
+                        <div class="resumo-item">
+                            <span class="resumo-number">3</span>
+                            <span class="resumo-label">Copa do Brasil</span>
+                        </div>
+                        <div class="resumo-item">
+                            <span class="resumo-number">1</span>
+                            <span class="resumo-label">Supercopa do Brasil</span>
+                        </div>
+                    </div>
+                    <div class="resumo-total">Total: 11 títulos</div>
+                </div>
+                
+                <div class="resumo-card estadual">
+                    <h3>Estaduais</h3>
+                    <div class="resumo-items">
+                        <div class="resumo-item">
+                            <span class="resumo-number">30</span>
+                            <span class="resumo-label">Campeonato Paulista</span>
+                        </div>
+                        <div class="resumo-item">
+                            <span class="resumo-number">5</span>
+                            <span class="resumo-label">Torneio Rio-São Paulo</span>
+                        </div>
+                    </div>
+                    <div class="resumo-total">Total: 35 títulos</div>
+                </div>
+            </div>
+            <div class="total-geral">
+                <h3>Total Geral de Títulos Oficiais</h3>
+                <div class="total-number">50+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estádio Section -->
+    <section id="estadio" class="section estadio-section">
+        <div class="container">
+            <h2 class="section-title">Arena Corinthians</h2>
+            <div class="estadio-content">
+                <div class="estadio-info">
+                    <h3>Casa do Timão desde 2014</h3>
+                    <div class="estadio-details">
+                        <div class="detail-item">
+                            <strong>Inauguração:</strong> 2014
+                        </div>
+                        <div class="detail-item">
+                            <strong>Capacidade:</strong> 49.205 pessoas
+                        </div>
+                        <div class="detail-item">
+                            <strong>Localização:</strong> Itaquera, São Paulo
+                        </div>
+                        <div class="detail-item">
+                            <strong>Construída para:</strong> Copa do Mundo 2014
+                        </div>
+                    </div>
+                    <p>A Arena Corinthians é o estádio oficial do clube desde 2014. Foi construída para sediar a abertura da Copa do Mundo e se tornou um dos mais modernos estádios da América Latina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/escudo-corinthians.jpg" alt="Corinthians" class="footer-logo-img">
+                    <p>Sport Club Corinthians Paulista</p>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 Corinthiansdex - História do Timão</p>
+                    <p>Site educacional sobre a história do Sport Club Corinthians Paulista</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.corinthians.com.br" target="_blank" class="social-link">Site Oficial</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody" class="modal-body">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
